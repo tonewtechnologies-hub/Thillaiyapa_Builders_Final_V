@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Poppins', sans-serif;
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Pastel Palette based on requirements */
+  /* Pastel Peach #FADFCF */
+  --color-pastel-peach: #FADFCF;
+  --color-peach: var(--color-pastel-peach);
+  --color-peach-foreground: hsl(30 13% 37%);
+  
+  /* Pastel Olive #D8E2C4 */
+  --color-pastel-olive: #D8E2C4;
+  --color-olive: var(--color-pastel-olive);
+  --color-olive-foreground: hsl(30 13% 37%);
+  
+  /* Pastel Lavender #E8E2FF */
+  --color-pastel-lavender: #E8E2FF;
+  --color-lavender: var(--color-pastel-lavender);
+  --color-lavender-foreground: hsl(30 13% 37%);
+  
+  /* Pastel Beige #F6F2E9 - Main Background */
+  --color-pastel-beige: #F6F2E9;
+  --color-beige: var(--color-pastel-beige);
+  --color-beige-foreground: hsl(30 13% 37%);
+  
+  /* Pastel Brown #6A5E52 - Main Text/Dark */
+  --color-pastel-brown: #6A5E52;
+  --color-brown: var(--color-pastel-brown);
+  --color-brown-foreground: hsl(44 38% 94%);
+
+  /* Mapping to semantic tokens */
+  --color-background: var(--color-beige);
+  --color-foreground: var(--color-brown);
+  
+  --color-primary: var(--color-brown);
+  --color-primary-foreground: var(--color-beige);
+  
+  --color-secondary: var(--color-peach);
+  --color-secondary-foreground: var(--color-brown);
+  
+  --color-muted: var(--color-olive);
+  --color-muted-foreground: var(--color-brown);
+  
+  --color-accent: var(--color-lavender);
+  --color-accent-foreground: var(--color-brown);
+  
+  --color-card: hsl(44 38% 96%); /* Slightly lighter beige */
+  --color-card-foreground: var(--color-brown);
+  
+  --color-popover: var(--color-beige);
+  --color-popover-foreground: var(--color-brown);
+  
+  --color-border: hsl(30 13% 85%); /* Lighter brown */
+  --color-input: hsl(30 13% 85%);
+  --color-ring: var(--color-brown);
+  
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from { height: 0 }
+    to { height: var(--radix-accordion-content-height) }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height) }
+    to { height: 0 }
+  }
+
+  /* Background Images */
+  --background-image-texture-woven: url('/assets/texture-woven.png');
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground bg-texture-woven;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+}

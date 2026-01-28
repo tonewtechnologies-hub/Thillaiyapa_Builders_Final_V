@@ -1,0 +1,41 @@
+Build a responsive, deployable website for "Thillaiyappa Jamakkalams" — a 100-year-old handloom maker of silk, woolen and cotton Jamakalams. This is a portfolio/catalogue site (NOT ecommerce) with a pastel + traditional-modern aesthetic. Use Next.js (or React) + Tailwind CSS. Produce Desktop (1440px), Tablet (768px) and Mobile (390px) layouts.
+
+Requirements:
+- Pages: Home, About, Products (catalogue only), Gallery, Manufacturing Process, Testimonials, Contact.
+- Header: sticky, logo left, nav items (Home, About, Products, Gallery, Process, Testimonials, Contact), hamburger on mobile.
+- Footer: pastel background, social icons, quick links, copyright. Include a floating WhatsApp chat button (use placeholder phone number +91XXXXXXXXXX).
+- Products page: three categories (Silk, Woolen, Cotton). Each product card shows image, name, material, short description, size & customization options. NO prices, NO cart.
+- Gallery: masonry/full-width grid of product + process images.
+- Manufacturing Process page: visual step-by-step (Loom → Dye → Weave → Finish) with icons + images + short text.
+- About: brand story emphasizing 100 years heritage, artisans, values (handmade, customization, durability).
+- Testimonials: cards with reviewer name, role (retail/wholesale/export), quote, star rating.
+- Contact: contact form (Name, Email, Phone, Message), email link (mailto:), phone, and Google Maps placeholder.
+
+Design & Assets:
+- Pastel color palette (use these hexs): 
+  Pastel Peach #FADFCF, Pastel Olive #D8E2C4, Pastel Lavender #E8E2FF, Pastel Beige #F6F2E9, Pastel Brown #6A5E52.
+- Typography: Poppins or Inter (system fallback). Large, airy spacing; 8px spacing system.
+- Visual style: subtle woven texture backgrounds, rounded cards, soft shadows, elegant CTAs.
+- Provide a Tailwind config extension with the palette and a small CSS utility for subtle weave texture (very low opacity).
+- Use accessible HTML (semantic elements, aria labels) and ensure color contrast meets WCAG for body text.
+
+Developer / Project requirements:
+- Create a clear folder structure (components/, pages/, public/assets/, styles/).
+- Create reusable components: Header, Footer, ProductCard, GalleryGrid, ProcessStep, TestimonialCard, ContactForm, WhatsAppButton.
+- Include sample JSON data file for products (3 example items per category) and map it to UI.
+- Implement responsive grid breakpoints: Desktop 3–4 columns, Tablet 2 columns, Mobile 1 column.
+- Add SEO-friendly meta tags for each page (title & description) and Open Graph tags for the Home page.
+- Provide instructions in README: how to run (`npm install`, `npm run dev`), build, and deploy (Vercel/Replit).
+- Ensure images use `next/image` or optimized `<img>` with proper srcset; include image placeholders if no real assets.
+- Make the WhatsApp button link open `https://wa.me/91XXXXXXXXXX?text=I%20need%20product%20details` — replace Xs with real number.
+
+Deliverables:
+1. Fully working Replit project (Next.js/React + Tailwind) with all pages and components.
+2. Tailwind config with pastel palette.
+3. Sample product JSON + image placeholders.
+4. README with run/deploy instructions and notes on where to replace real assets & the WhatsApp number.
+5. A short note section listing any decisions or trade-offs you made.
+
+Extra (optional): generate a small SVG logo suggestion and a one-page content draft for Home/About/Products/Contact.
+
+When you finish, provide a live preview link (Replit URL or Vercel) and the repository structure. Keep code clean, commented, and production-ready.
