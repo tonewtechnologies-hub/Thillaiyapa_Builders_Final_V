@@ -10,9 +10,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,19 +28,21 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-lg shadow-md py-2"
-          : "bg-background/80 backdrop-blur-md py-4"
+          ? "bg-background/95 backdrop-blur-lg shadow-md py-1.5 md:py-2"
+          : "bg-background/80 backdrop-blur-md py-2 md:py-4"
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-4 flex items-center justify-between">
+      {/* 🔥 IMPORTANT: relative added */}
+      <div className="relative max-w-[1600px] mx-auto px-3 md:px-4 flex items-center justify-between">
 
-        {/* ================= LOGO ================= */}
-        <Link href="/" className="flex items-center gap-4 group select-none">
+        {/* ================= LEFT → LOGO ================= */}
+        <Link
+          href="/"
+          className="flex items-center gap-2 md:gap-4 group select-none z-10"
+        >
           <div className="relative">
-            {/* Outer ring for presence */}
             <div className="absolute inset-0 rounded-full ring-1 ring-primary/30" />
-
-            <div className="h-14 w-14 md:h-16 md:w-16 rounded-full bg-white flex items-center justify-center shadow-md border border-black/10">
+            <div className="h-10 w-10 md:h-16 md:w-16 rounded-full bg-white flex items-center justify-center shadow-md border border-black/10">
               <img
                 src="/assets/logo/logo-dark.png"
                 alt="Thillaiyappa Jamakkalams"
@@ -51,6 +51,7 @@ export function Header() {
             </div>
           </div>
 
+          {/* Desktop title only */}
           <div className="hidden sm:flex flex-col leading-tight">
             <span className="text-base md:text-lg font-semibold tracking-wide text-foreground">
               Thillaiyappa Textiles
@@ -60,6 +61,16 @@ export function Header() {
             </span>
           </div>
         </Link>
+
+
+        {/* ================= MOBILE CENTER TITLE ================= */}
+        {/* 🔥 ONLY mobile */}
+        <div className="absolute left-1/2 -translate-x-1/2 lg:hidden pointer-events-none">
+          <span className="text-sm font-semibold tracking-wide text-foreground whitespace-nowrap">
+            Thillaiyappa Textiles
+          </span>
+        </div>
+
 
         {/* ================= DESKTOP NAV ================= */}
         <nav className="hidden lg:flex items-center gap-8">
@@ -85,8 +96,9 @@ export function Header() {
           </Button>
         </nav>
 
-        {/* ================= MOBILE NAV ================= */}
-        <div className="lg:hidden">
+
+        {/* ================= MOBILE MENU ================= */}
+        <div className="lg:hidden z-10">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -123,6 +135,7 @@ export function Header() {
             </SheetContent>
           </Sheet>
         </div>
+
       </div>
     </header>
   );

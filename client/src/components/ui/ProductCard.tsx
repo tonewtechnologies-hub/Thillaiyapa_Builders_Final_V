@@ -10,7 +10,6 @@ interface Product {
   category: string;
   description: string;
   material: string;
-  sizes: string[];
   image: string;
   customization: string;
 }
@@ -47,10 +46,6 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="flex items-center gap-2">
             <span className="font-medium text-foreground">Material:</span>
             <span>{product.material}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-medium text-foreground">Sizes:</span>
-            <span>{product.sizes.join(", ")}</span>
           </div>
         </div>
       </CardContent>
