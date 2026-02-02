@@ -65,11 +65,15 @@ export function Header() {
 
         {/* ================= MOBILE CENTER TITLE ================= */}
         {/* 🔥 ONLY mobile */}
-        <div className="absolute left-1/2 -translate-x-1/2 lg:hidden pointer-events-none">
-          <span className="text-sm font-semibold tracking-wide text-foreground whitespace-nowrap">
-            Thillaiyappa Textiles
-          </span>
-        </div>
+          <div className="absolute left-1/2 -translate-x-1/2 lg:hidden pointer-events-none text-center">
+            <div className="text-sm font-semibold tracking-wide text-foreground whitespace-nowrap">
+              Thillaiyappa Textiles
+            </div>
+
+            <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">
+              House of Jamakkalams
+            </div>
+          </div>
 
 
         {/* ================= DESKTOP NAV ================= */}

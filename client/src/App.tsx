@@ -13,6 +13,7 @@ import Gallery from "@/pages/Gallery";
 import Process from "@/pages/Process";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
+import ScrollToTop from "@/components/ScrollToTop";
 
 /* ================= PAGE ANIMATION CONFIG ================= */
 
@@ -41,6 +42,9 @@ function Router() {
 
   return (
     <Layout>
+      {/* ✅ scroll reset on route change */}
+      <ScrollToTop />
+
       <AnimatePresence mode="wait">
         <motion.main
           key={location}
@@ -65,6 +69,7 @@ function Router() {
     </Layout>
   );
 }
+
 
 function App() {
   return (
