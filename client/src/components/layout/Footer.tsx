@@ -37,7 +37,7 @@ export function Footer() {
 
             <div className="flex gap-4 pt-2">
               <a
-                href="#"
+                href="https://www.instagram.com/thillaiyappa_jamakkalams?igsh=aDA2MG9wZXp0NGFn"
                 aria-label="Instagram"
                 className="text-muted-foreground hover:text-primary transition"
               >
